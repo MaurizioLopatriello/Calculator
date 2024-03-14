@@ -1,0 +1,17 @@
+.bodyColor{
+    background-color: salmon;
+}
+.myCal{
+    background-color: cadetblue;
+    height: 700px;
+    width: 450px;
+    border-radius: 15px;
+    margin: auto;
+    border-style: groove;
+    border-color:rgb(228, 24, 228);
+}
+.btn{
+    width: 50px;
+    height: 50px;
+    margin-top: 300px;
+}
