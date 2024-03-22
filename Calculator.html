@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    
+<head>
         <title>My Calculator </title>
         <link rel="icon" type="image/x-icon" href="Calculator_31111.png">
-    </head>
-    <body class="bodyColor">
         <link rel="stylesheet" href="Calculator.css">
-        <script src="Calculator.js"></script>
+        <link rel="stylesheet" href="passwordGenerator.css">
+    </head>
+    
+    <body class="bodyColor">
+
+        <div class="passwordContainer">
+            <h1 style="text-align: center; color: crimson; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Choose Settings</h1><br>
+            <div class="optionCont">
+                <input id="toLowercase" class="checkkino" type="checkbox"><label for="toLowercase"> LowerCase Chars</label><br><br>
+                <input id="toUpperCase" class="checkkino" type="checkbox"><label for="toUppercase"> UpperCase Chars</label><br><br>
+                <input id="addnumbers" class="checkkino" type="checkbox"><label for="addnumbers"> Numbers Chars</label><br><br>
+                <input id="addSymbols" class="checkkino" type="checkbox"><label for="addSymbols"> Symbols Chars</label><br><br>
+                <label for="numberChars">Length of the password : </label><input id="numberChars" type="text">
+            </div>
+            <button class="btnGenerate" onclick="generatePassword()">Generate Password</button>
+            <h1 id="passwordH1">0</h1>
+        </div>
+
+        <div style="background-color: aliceblue; height: 600px; width: 600px; margin: 35%; border-radius: 15px; padding-bottom:10px;">
+            <h1 style = "color: crimson; text-align: center;">Roll Dice Machine</h1>
+            <div class="contenitoreDice">
+                <label for="inputDice" style="color: crimson;font-size: 30px;">ROLL DICE</label>
+                <Input id="inputDice" style="font-size: 30px; width:200px;" type="number" value="1" min="1" ></Input>
+                <button id ="buttRoll" onclick="rollDice()">Roll</button><br><br>
+                <h1 id="resultDice" style="font-size: 40px; color:crimson ; text-align: center; margin: 25px ">0</h1>
+                <div id="diceImage"></div>  
+            </div>
+              
+        </div>
+
+        <div class="tempContainer">
+            <div class="innerContainer">
+                <input type="text" id="displayTemp"><br><br>
+                <input type="radio" name="type" class="radiobtn" id="toFahrenheit"> <label for="toFahrenheit">Convert C° into F°</label> <br>
+                <input type="radio" name="type" class="radiobtn" id="toCelsius"> <label for="toCelsius">Convert F° into C°</label><br><br>
+                <button id="convertBtn" onclick="convert()" >Convert</button>
+                <h1 id ="result">Select a unit </select></h1>
+            </div>
+        </div>
+        
+        <button id="showNun">Show</button>
+        <h1 id="myH1">yoo</h1>
+        
         <div class="container">
             <div class="myCal">
                 <form>
@@ -16,29 +57,39 @@
                     <div>
                         <input type="button" value="C" onclick="display.value = '' ">
                         <input type="button" value="0" onclick="display.value += '0'">
-                        <input type="button" value="." onclick="display.value += '.'">
-                        <input type="button" value="/" onclick="display.value += '/'">
+                        <input id="delete" type="button" value="DE" onclick="display.value = '' ">
+                        <input class="operator" id="division" type="button" value="/" onclick="display.value += '/'">
                     </div>
                     <div>
                         <input type="button" value="7" onclick="display.value += '7'">
                         <input type="button" value="8" onclick="display.value += '8'">
                         <input type="button" value="9" onclick="display.value += '9'">
-                        <input type="button" value="x" onclick="display.value += 'x'">
+                        <input class="operator" type="button" value="x" onclick="display.value += 'x'">
                     </div>
                     <div>
                         <input type="button" value="4" onclick="display.value += '4'">
                         <input type="button" value="5" onclick="display.value += '5'">
                         <input type="button" value="6" onclick="display.value += '6'">
-                        <input type="button" value="-" onclick="display.value += '-'">
+                        <input class="operator" type="button" value="-" onclick="display.value += '-'">
                     </div>
                     <div>
                         <input type="button" value="1" onclick="display.value += '1'">
                         <input type="button" value="2" onclick="display.value += '2'">
                         <input type="button" value="3" onclick="display.value += '3'">
-                        <input type="button" value="+" onclick="display.value += '+'">
+                        <input class="operator" type="button" value="+" onclick="display.value += '+'">
+                    </div>
+                    <div>
+                        <input type="button" value="." onclick="display.value += '.'">
+                        <input type="button" value="=" onclick="display.value += '='">
                     </div>
                 </form>            
             </div>
-        </div>
+         </div>
+        
+         <script src="Calculator.js"></script>
+        <script src="temperatureConverter.js"></script>
+        <script src="NumberGuesser.js"></script>
+        <script src="PasswordGenerator.js"></script>
+    
     </body>
 </html>
